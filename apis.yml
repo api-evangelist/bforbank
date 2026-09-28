@@ -1,23 +1,62 @@
 aid: bforbank
+
 name: Bforbank
-description: 'Bforbank is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Bforbank is a French digital bank offering online banking services, credit cards, savings accounts, loans, and investment products. It emphasizes a human‑centric digital experience, providing secure banking, personalized offers, and a range of financial tools through its web and mobile platforms. The bank aims to combine simplicity with comprehensive financial services for individuals and businesses.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bforbank/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
 - Company
-apis: []
+- Banking
+- DigitalBank
+- France
+- FinTech
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/bforbank-hosts.yml
+- type: Login
+  url: https://customers.bforbank.com/login
+- type: Blog
+  url: https://www.bforbank.com/blog
+- type: DomainSecurity
+  url: security/bforbank-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/bforbank
+  url: https://www.bforbank.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The OpenAPI endpoint returns an HTML page rendered by Next.js instead of a machine‑readable spec.
+  evidence:
+    - url: https://www.bforbank.com/openapi.json
+      status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
